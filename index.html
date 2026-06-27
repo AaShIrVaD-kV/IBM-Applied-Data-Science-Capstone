@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX Falcon 9 Landing Prediction Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SPACEX<span>.STATS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link " href="methodology.html">Methodology</a></li>
+<li class="nav-item"><a class="nav-link " href="analysis.html">EDA Analysis</a></li>
+<li class="nav-item"><a class="nav-link " href="machine-learning.html">Machine Learning</a></li>
+<li class="nav-item"><a class="nav-link " href="insights.html">Insights</a></li>
+<li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="hero">
+        <div class="container">
+            <h1 class="hero-title">Predicting Falcon 9 <span>First Stage Landings</span></h1>
+            <p class="hero-subtitle">IBM Applied Data Science Capstone portfolio demonstrating predictive classification of reusable rocket landings.</p>
+            <a href="analysis.html" class="btn btn-outline-danger btn-lg px-4 me-2">Explore Charts</a>
+            <a href="machine-learning.html" class="btn btn-danger btn-lg px-4">See Models</a>
+        </div>
+    </div>
+    
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="custom-card text-center">
+                    <i class="fas fa-database fa-3x mb-3 text-danger"></i>
+                    <h3>Data Collection</h3>
+                    <p>Processed launch data from SpaceX REST API and web scraped Wikipedia tables.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-card text-center">
+                    <i class="fas fa-map-marked-alt fa-3x mb-3 text-danger"></i>
+                    <h3>GIS Analysis</h3>
+                    <p>Analyzed coordinate margins of launch pads and safety distance factors.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-card text-center">
+                    <i class="fas fa-brain fa-3x mb-3 text-danger"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Optimized Support Vector Machine (SVM) and Logistic Regression to 83.33% accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 SpaceX Falcon 9 Landing Prediction Dashboard</p>
+            <p class="mb-0">
+                <a href="https://github.com/AaShIrVaD-kV/IBM-Applied-Data-Science-Capstone" class="footer-link mx-2" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+                <a href="../Project_Report/PROJECT_REPORT.pdf" class="footer-link mx-2" target="_blank"><i class="far fa-file-pdf"></i> Technical Report</a> |
+                <a href="../Project_Report/IBM_Capstone_Presentation.pdf" class="footer-link mx-2" target="_blank"><i class="far fa-file-powerpoint"></i> Presentation</a>
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

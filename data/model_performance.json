@@ -1,0 +1,22 @@
+[
+    {
+        "method": "Support Vector Machine",
+        "validation_acc": 84.82,
+        "test_acc": 83.33
+    },
+    {
+        "method": "Logistic Regression",
+        "validation_acc": 84.64,
+        "test_acc": 83.33
+    },
+    {
+        "method": "K-Nearest Neighbors",
+        "validation_acc": 84.82,
+        "test_acc": 83.33
+    },
+    {
+        "method": "Decision Tree",
+        "validation_acc": 87.5,
+        "test_acc": 77.78
+    }
+]

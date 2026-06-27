@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDA & SQL Analysis - SpaceX Landing Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SPACEX<span>.STATS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link " href="methodology.html">Methodology</a></li>
+<li class="nav-item"><a class="nav-link active" href="analysis.html">EDA Analysis</a></li>
+<li class="nav-item"><a class="nav-link " href="machine-learning.html">Machine Learning</a></li>
+<li class="nav-item"><a class="nav-link " href="insights.html">Insights</a></li>
+<li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container my-5">
+        <h2 class="mb-4 text-center">Exploratory Data Analysis</h2>
+        
+        <!-- Plotly Charts Grid -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="custom-card">
+                    <div id="orbitSuccessChart"></div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="custom-card">
+                    <div id="yearlyTrendChart"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="custom-card">
+                    <div id="flightVsLaunchChart"></div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="custom-card">
+                    <div id="payloadVsLaunchChart"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Leaflet Map -->
+        <div class="custom-card mb-4">
+            <h3 class="card-title">Launch Pad Locations & Safety Clusters</h3>
+            <div id="leafletMap" style="height: 450px; border-radius: 8px;"></div>
+        </div>
+        
+        <!-- SQL Table -->
+        <div class="custom-card">
+            <h3 class="card-title">SQL Audits (SQLite Database)</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Query Objective</th>
+                            <th>SQL Query Execution Statement</th>
+                            <th>Database Output / Observations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total NASA CRS Payload</td>
+                            <td><code>SELECT SUM(Payload_Mass__kg_) FROM SPACEXTABLE WHERE Customer LIKE 'NASA (CRS)%'</code></td>
+                            <td>45,596 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Average F9 v1.1 Payload</td>
+                            <td><code>SELECT AVG(Payload_Mass__kg_) FROM SPACEXTABLE WHERE Booster_Version = 'F9 v1.1'</code></td>
+                            <td>2,928.4 kg</td>
+                        </tr>
+                        <tr>
+                            <td>First Ground Pad Landing</td>
+                            <td><code>SELECT MIN(Date) FROM SPACEXTABLE WHERE Landing_Outcome = 'Success (ground pad)'</code></td>
+                            <td>2015-12-22 (Flight 20)</td>
+                        </tr>
+                        <tr>
+                            <td>Max Payload Starlink flights</td>
+                            <td><code>SELECT Booster_Version, Payload_Mass__kg_ FROM SPACEXTABLE WHERE Payload_Mass__kg_ = 15600</code></td>
+                            <td>12 booster versions (15,600 kg)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/charts.js"></script>
+    <script src="js/maps.js"></script>
+    
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 SpaceX Falcon 9 Landing Prediction Dashboard</p>
+            <p class="mb-0">
+                <a href="https://github.com/AaShIrVaD-kV/IBM-Applied-Data-Science-Capstone" class="footer-link mx-2" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+                <a href="../Project_Report/PROJECT_REPORT.pdf" class="footer-link mx-2" target="_blank"><i class="far fa-file-pdf"></i> Technical Report</a> |
+                <a href="../Project_Report/IBM_Capstone_Presentation.pdf" class="footer-link mx-2" target="_blank"><i class="far fa-file-powerpoint"></i> Presentation</a>
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>
